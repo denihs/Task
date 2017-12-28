@@ -322,16 +322,19 @@ td a{
 
 /*====================RESULÇÃO PEQUENA================*/
 @media all and (max-width: 650px){
+  /*Config do formulario*/
   form {
-    width: 90vw;
+    width: 98vw;
   }
   textarea {
-    max-width: calc(88.4vw - 16px);
-    min-width: calc(88.4vw - 16px);
+    max-width: calc(96vw - 16px);
+    min-width: calc(96vw - 16px);
   }
+  /*Tabela que mostra o nome das tarefas*/
   table{
-    width: 90vw;
+    width: 98vw;
   }
+  /*Config dos erros*/
   .error{
     width: 90vw;
   }
@@ -342,12 +345,14 @@ td a{
     opacity: 0;
     left: 10vw;
   }
+  /*Detalhes da tarefa*/
   .header-descricao{
-    width: 89vw;
+    width: 97vw;
   }
   .body {
-    width: 90vw;
+    width: 98vw;
   }
+  /*Pagina da exclusao da tarefa*/
   .opcoes_exclusao{
     width: 90vw;
   }
