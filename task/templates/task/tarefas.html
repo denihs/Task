@@ -1,0 +1,18 @@
+{% extends 'task/base.html' %}
+
+
+{% block tarefas-list %}
+    <table>
+      <tr>
+        <th class="center title-tarefa">
+          <span class="span-tarefa">Tarefas</span>
+          <span class="span-add"> <a href="{% url 'task:formulario' id %}"> +</a></span>
+        </th>
+      </tr>
+      {% for tarefa in tarefas %}
+      <tr>
+        <td class="center"><a href="{% url 'task:detail' tarefa.id%}">{{ tarefa.nome }}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

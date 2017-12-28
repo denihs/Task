@@ -1,0 +1,62 @@
+{% extends 'task/base.html' %}
+
+
+{% block formulario %}
+
+    <form action="{% url  action   id %}" method="post"> {% csrf_token %}
+      <label for="tarefa">Tarefa<span title="Campo obrigatório"> *</span></label>
+      <input type="text" name="tarefa" id="tarefa" autofocus title="Nome da tarefa" placeholder="ex: Comprar pão" value="{{ campos.tarefa }}">
+
+      <label for="descricao">Descricao</label>
+      <textarea name="descricao" id="descricao" placeholder="(Opcional)" >{{ campos.desc }}</textarea>
+
+      <label for="prazo">Prazo para conclusão</label>
+      <input type="text" name="prazo" id="prazo" placeholder="(Opcional)" value="{{ campos.prazo }}">
+
+      <fieldset>
+        <legend>Prioridade</legend>
+        <div class="prioridade">
+          <div class="prioridade-item">
+            <label for="baixa"  class="labelRadio  {% if campos.prio == "1" or campos.prio == ''%}click{% endif %}">
+                Baixa
+            </label>
+            <input class="hidden" type="radio" name="prioridade" id="baixa" value="1" checked>
+          </div>
+
+          <div class="prioridade-item">
+            <label for="media" class="labelRadio  {% if campos.prio == "2"%}click{% endif %} ">
+                Média
+            </label>
+              <input class="hidden" type="radio" name="prioridade" id="media"  value="2" {% if campos.prio == "2"%}checked{% endif %}>
+          </div>
+
+          <div class="prioridade-item">
+            <label for="alta" class="labelRadio  {% if campos.prio == "3"%}click{% endif %}">
+              Alta
+            </label>
+            <input class="hidden" type="radio" name="prioridade" id="alta"  value="3"  {% if campos.prio == "3"%}checked{% endif %}>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="concluida">
+        <label for="concluida">Tarefa concluida:</label>
+        <input type="checkbox" name="concluida"  id="concluida" value = "1"  {% if campos.conc == '1'%}checked{% endif %}>
+      </div>
+
+      <div class="buttons-form">
+          <input type="submit" value="{{ button }}" />
+          {% if button == "Salvar Edição" %}
+              <a href="{% url 'task:detail' id %}"> <input type="button" value="Cancelar" /></a>
+          {% endif %}
+    </div>
+    </form>
+{% endblock %}
+
+{% block error %}
+      {% if error != '' %}
+        <div class="error">
+          <h3>{{ error }}</h3>
+        </div>
+      {% endif %}
+{% endblock %}

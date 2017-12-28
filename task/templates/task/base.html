@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Tarefas</title>
+
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}">
+
+    <script src="{% static 'js/Script.js' %}">
+
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <header class="header-pagina">
+    <h1>Minhas Tarefas</h1>
+  </header>
+  <body>
+    <div class="corpo-tarefas">
+        {% block error %}{% endblock %}
+        {% block formulario %} {% endblock %}
+        {% block tarefas-list %} {% endblock %}
+        {% block detail %}{% endblock %}
+        {% block exclusao %}{% endblock %}
+      </div>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<h1> USERSSSSSSSSSS </h1>
+
+{% for u in user %}
+  <p> <a href="{% url 'task:tarefas' u.id %}">{{ u.username }}</a> </p>
+{% endfor %}

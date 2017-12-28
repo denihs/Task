@@ -1,0 +1,52 @@
+{% extends 'task/base.html' %}
+
+{% block detail %}
+   <header class="header-descricao"><h1>{{ tarefa.nome }}</h1></header>
+   <section class="body">
+      <div class="descricaoDetail">
+            <span>Descrição</span>
+            <p >{{ tarefa.descricao }}</p>
+      </div>
+
+      <div class="prazo">
+          <span>Prazo</span>
+            <p>{{ tarefa.prazo }}</p>
+      </div>
+      <div class="prio-conc">
+
+        <div class="prioridadeDetail">
+          <span>Prioridade</span>
+          <p>
+            {% if tarefa.prioridade == 1 %}
+                Baixa
+            {% elif tarefa.prioridade == 2%}
+                Média
+            {% else %}
+                Alta
+            {% endif %}
+          </p>
+        </div>
+
+        <div class="concluida">
+          <span>Concluída</span>
+          <p>
+            {% if tarefa.concluida == 1 %}
+                SIM
+            {% else %}
+                 NÃO
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a  href="{% url 'task:editarDados' id %}">
+            Editar
+        </a>
+        <a href="{% url 'task:remover' id %}">
+            Remover
+        </a>
+      </div>
+</section>
+
+{% endblock %}

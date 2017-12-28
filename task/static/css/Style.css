@@ -1,0 +1,320 @@
+body{
+  margin: 0 0 20px;
+
+}
+.corpo-tarefas{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+a {
+  text-decoration: none;
+}
+.hidden{
+  display: none;
+}
+/* ================ SESSÃO DO ESTILO DOS ERROS  =============================*/
+.error{
+  background-color: rgba(240, 44, 44, 0.9);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  width: 45vw;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: -47vw;
+  transition: all 0.5s;
+}
+.show_error{
+  left: 27.5vw;
+}
+.remove_error{
+  left: 100vw;
+}
+/* ================ SESSÃO DO ESTILO DA LISTA DE TAREFAS  =============================*/
+
+/*----------------------------CABEÇALHO----------------------*/
+.header-pagina {
+  background-image: linear-gradient(to bottom, #64FFDA, white);
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.header-pagina h1 {
+  margin: 0;
+  color: white;
+  margin-left: 27px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 48px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+/* --------------- FOMULARIO -------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #A7FFEB;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  width: 45vw;
+  color: rgba(0, 0, 0, 0.6);
+  height: 72vh;
+}
+
+fieldset{
+  border-color: white;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  margin-top: 10px;
+}
+
+input, textarea{
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.4);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+textarea {
+  min-height: 78px;
+  max-height: 78px;
+
+  max-width: calc(44.6vw - 16px);
+  min-width: calc(44.6vw - 16px);
+}
+label{
+  margin-top: 5px;
+}
+.prioridade {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+}
+.prioridade-item label{
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  background-color: white;
+  transition: all 0.5s;
+}
+
+label.click{
+  background-color: rgba(0,0,0,0.8 );
+  box-shadow: 0 0 5px blue;
+  color: white;
+  padding: 14px;
+}
+
+
+.concluida{
+  padding: 20px;
+}
+.concluida input{
+  box-shadow: none;
+}
+.concluida input{
+  margin-left: 10px;
+  background-color: blue;
+}
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.buttons input:hover{
+  background-color: rgba(0,0,0,0.8 );
+  box-shadow: 0 0 5px blue;
+  color: white;
+  cursor: pointer;
+}
+
+.buttons-form input{
+  margin: 0 4px;
+  cursor: pointer;
+}
+/*----------------LISTA NOMES DAS TAREFAS---------------*/
+table {
+  width: 45vw;
+  margin: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  margin-top: 0;
+}
+
+
+th {
+  text-align: center;
+  background-color:  #00BFA5;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+  font-size: 27px;
+}
+
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  background-color: #18FFFF;
+}
+td a{
+  text-decoration: none;
+  font-size: 20px;
+  color: rgba(0,0,0,0.7);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 1);
+}
+.center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.title-tarefa {
+  display: flex;
+}
+.span-tarefa{
+  flex: 3;
+  margin-left: 62px;
+}
+.span-add a{
+  padding: 0 20px;
+  color: white;
+  font-size: 36px;
+  transition: all 0.5s;
+}
+.span-add a:hover{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*====================SESSÃO DOS DETALHES================*/
+/*Cabeçalho*/
+.header-descricao{
+  width: 64vw;
+  background-image: linear-gradient(to bottom, #18FFFF, white);
+  border-radius: 10px 10px 0 0;
+}
+
+.header-descricao h1{
+  font-family: 'Cabin', sans-serif;
+  text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: white;
+}
+/*Corpo da descricao*/
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 65vw;
+}
+/*Descrição e Prazo*/
+.body > .descricaoDetail,.prazo, .prio-conc, .anexos {
+  border: 1px solid #18FFFF;
+  margin: 3px;
+  padding: 20px;
+  border-radius: 9px;
+  border-top: none;
+  border-bottom: none;
+  margin: 5px;
+  box-shadow: 0 0 2px #18FFFF;
+  background-color: white;
+}
+
+.body span {
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: 'Shadows Into Light', cursive;
+}
+/*prioridade e concluida*/
+.prio-conc{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 5px 9px;
+}
+
+.prioridadeDetail, .concluidaDetail{
+  display: flex;
+  align-items:  center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.prio-conc p{
+  margin: 0;
+  padding: 20px;
+  border: 5px dotted rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/*Buttons*/
+.buttons, .buttons-form {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.buttons a{
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.buttons a:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*====================SESSÃO DA EXCLUSÃO================*/
+.corpo_exclusao{
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.opcoes_exclusao{
+  background-color: white;
+  width: 50vw;
+  height: 50vh;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+  transition: all 0.5s;
+}
+.span_exclusao{
+  color: red;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 1);
+}
+.buttons_exclusao {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.buttons_exclusao a{
+  margin: 0 5px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  color: white;
+}
+.buttons_exclusao a:hover{
+  color: black;
+  background-color: rgba(0, 0, 0, 0.3);
+}
