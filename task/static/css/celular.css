@@ -1,7 +1,0 @@
-form {
-  width: 80vw;
-}
-textarea {
-  max-width: calc(78.4vw - 16px);
-  min-width: calc(78.4vw - 16px);
-}
