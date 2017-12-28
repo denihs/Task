@@ -26,12 +26,14 @@ a {
   position: absolute;
   left: -47vw;
   transition: all 0.5s;
+  top: 40vh;
 }
 .show_error{
   left: 27.5vw;
 }
 .remove_error{
-  left: 100vw;
+  opacity: 0;
+  left: 55vw;
 }
 /* ================ SESSÃO DO ESTILO DA LISTA DE TAREFAS  =============================*/
 
@@ -287,7 +289,6 @@ td a{
 .opcoes_exclusao{
   background-color: white;
   width: 50vw;
-  height: 50vh;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -305,7 +306,7 @@ td a{
 .buttons_exclusao {
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  margin: 10px;
 }
 .buttons_exclusao a{
   margin: 0 5px;
@@ -322,10 +323,32 @@ td a{
 /*====================RESULÇÃO PEQUENA================*/
 @media all and (max-width: 650px){
   form {
-    width: 80vw;
+    width: 90vw;
   }
   textarea {
-    max-width: calc(78.4vw - 16px);
-    min-width: calc(78.4vw - 16px);
+    max-width: calc(88.4vw - 16px);
+    min-width: calc(88.4vw - 16px);
+  }
+  table{
+    width: 90vw;
+  }
+  .error{
+    width: 90vw;
+  }
+  .show_error{
+    left: 5.5vw;
+  }
+  .remove_error{
+    opacity: 0;
+    left: 10vw;
+  }
+  .header-descricao{
+    width: 89vw;
+  }
+  .body {
+    width: 90vw;
+  }
+  .opcoes_exclusao{
+    width: 90vw;
   }
 }
