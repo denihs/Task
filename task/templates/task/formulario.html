@@ -2,8 +2,11 @@
 
 
 {% block formulario %}
-
-    <form action="{% url  action   id %}" method="post"> {% csrf_token %}
+    {% if action == 'task:salvarEdicaoDados' %}
+      <form action="{% url  action id%}" method="post"> {% csrf_token %}
+    {% else %}
+      <form action="{% url  action%}" method="post"> {% csrf_token %}
+    {% endif %}
       <label for="tarefa">Tarefa<span title="Campo obrigatório"> *</span></label>
       <input type="text" name="tarefa" id="tarefa" autofocus title="Nome da tarefa" placeholder="ex: Comprar pão" value="{{ campos.tarefa }}">
 
