@@ -1,15 +1,26 @@
 window.onload = function(){
-  var labelRadio = document.querySelectorAll(".labelRadio"),
-      error = document.querySelector(".error");
 
+  var labelRadio = document.querySelectorAll(".labelRadio"),
+      error = document.querySelector(".error"),
+
+      iconUser = document.querySelector(".user"),
+      menuDeslizante = document.querySelector(".menu-deslizante");
+
+//Efeito nos botões de prioridade
   function onChangeBackgroundClick(){
     for(var i = 0; i < 3; i++){
       labelRadio[i].classList.remove("click");
     }
     this.classList.add("click");
   }
-
   labelRadio.forEach(click => click.addEventListener("click", onChangeBackgroundClick));
+
+  //Menu deslizante
+  function onDropMenuClick(){
+    menuDeslizante.classList.toggle("showMenuDeslizante")
+  }
+  iconUser.addEventListener("click", onDropMenuClick);
+
 
   //Efeito para quando existe um erro
   error.classList.add("show_error");
@@ -21,4 +32,7 @@ window.onload = function(){
   setInterval(function(){
       error.classList.add("remove_error");
     }, 2000);
-  };
+
+
+
+};

@@ -80,7 +80,8 @@ def cadastrarFormulario(request):
                 'prio':   request.POST['prioridade'],
                 'conc':   request.POST['concluida'],
             }
-            return formulario(request, is_valid(request, pk)['error'], campos)
+
+            return formulario(request = request, error =  is_valid(request, pk)['error'],campos = campos)
 
         user.task_set.create(nome = request.POST['tarefa'],
                                 descricao = request.POST['descricao'],
@@ -93,6 +94,7 @@ def cadastrarFormulario(request):
 #Gerencia o formulario
 def formulario(request,pk = '', error = '', campos = {'tarefa':'', 'desc': '', 'prazo': '', 'prio':'1', 'conc':'0'}, action = 'task:cadastrarFormulario', button = 'Nova Tarefa'):
     user_log(request)
+    print(error)
     return render(request, 'task/formulario.html', { 'id': pk, 'error': error, 'campos': campos, 'action' : action, 'button': button})
 
 
@@ -116,7 +118,7 @@ def salvarEdicaoDados(request, pk):
                 'prio':   request.POST['prioridade'],
                 'conc':   request.POST['concluida'],
             }
-            return formulario(request, pk, is_valid(request, pk)['error'], campos, action = 'task:salvarEdicaoDados', button = 'Salvar Edição')
+            return formulario(request = request, pk = pk,error = is_valid(request, pk)['error'],campos =  campos, action = 'task:salvarEdicaoDados', button = 'Salvar Edição')
 
     tarefa.nome = request.POST['tarefa']
     tarefa.descricao = request.POST['descricao']

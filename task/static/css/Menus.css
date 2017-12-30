@@ -1,0 +1,85 @@
+/* ================ SESSÃO DO CABEÇALHO DA PAGINA  =============================*/
+/*----------------------------CABEÇALHO----------------------*/
+.user{
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.user:hover{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/*===============  MENU DESLIZANTE ==============*/
+.menu-dropdown-deslizante{
+  display: none;
+}
+.menu-deslizante{
+  left: -25vw;
+  transition: all 0.5s;
+}
+
+/* Config para o menu aberto */
+.menu-deslizante.showMenuDeslizante{
+  left: 0vw;
+}
+.menu-deslizante{
+  position: absolute;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 25vw;
+  top: 0;
+}
+.menu-dropdown-deslizante{
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* Config dos links no menu */
+.item-menu{
+    display: block;
+    width: 100%;
+}
+
+/* Config do item no menu */
+.menu-dropdown-deslizante li{
+  padding: 10px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.menu-dropdown-deslizante .item-list-menu{
+    display: block;
+    width: 100%;
+}
+.menu-dropdown-deslizante .item-link:hover > *{
+  color: rgba(0, 0, 0, 0.7);
+}
+.menu-dropdown-deslizante .item-link:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/*====================RESULÇÃO PEQUENA================*/
+@media all and (max-width: 650px ){
+  .menu-deslizante{
+    left: -45vw;
+  }
+  .menu-deslizante{
+    width: 45vw;
+  }
+  .name_user{
+    display: none;
+  }
+  .user{
+    font-size: 35px;
+  }
+  .header-pagina h1 {
+    font-size: 38px;
+  }
+}
