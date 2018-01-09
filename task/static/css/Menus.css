@@ -82,10 +82,10 @@ li img{
 /*====================RESULÇÃO PEQUENA================*/
 @media all and (max-width: 650px ){
   .menu-deslizante{
-    left: -45vw;
+    left: -70vw;
   }
   .menu-deslizante{
-    width: 45vw;
+    width: 70vw;
   }
   .name_user{
     display: none;
