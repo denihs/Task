@@ -173,7 +173,6 @@ header{
       flex-direction: column;
       background-size:  100vw 100%;
       background-attachment: fixed;
-      height: calc(100vh - 50px);
   }
   .merchan{
     width: 90vw;
