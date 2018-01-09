@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Visualg (Versão 2)
-Exec=env WINEPREFIX="/home/denyhs/.wine" wine Z:\\\\home\\\\denyhs\\\\Documentos\\\\Visualg\\ Versão\\ 2\\\\visualg.exe 
-Type=Application
-StartupNotify=true
-Path=/home/denyhs/.wine/dosdevices/z:/home/denyhs/Documentos/Visualg Versão 2
-Icon=3635_visualg.0
