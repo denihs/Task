@@ -77,7 +77,6 @@ header{
   align-items: center;
 
   width: 100%;
-  height: calc(100vh - 80px);
   background-color: white;
 
   background-color: rgba(0, 0, 0, 0.4);
@@ -176,11 +175,10 @@ header{
       height: calc(100vh - 50px);
   }
   .merchan{
-    margin: 10px;
     width: 90vw;
   }
   .formulario-cadastro{
-    margin: 10px;
+    margin: -3px;
   }
 }
 @media all and (max-width: 500px){
