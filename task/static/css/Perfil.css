@@ -1,6 +1,11 @@
+html{
+  display: flex;
+  justify-content: center;
+}
 
 .header-pagina{
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), white);
+  width: 100vw;
 }
 /* ------------------------CORPO PERFIL-------------------------- */
 .corpo_perfil{
