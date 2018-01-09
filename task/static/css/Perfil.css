@@ -39,11 +39,11 @@ form {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 40px;
+  margin: 20px 0;
 
   color: white;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 5px;
 }
 .inputs_form{
