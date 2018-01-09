@@ -184,7 +184,6 @@ header{
 @media all and (max-width: 500px){
   .formulario-cadastro{
       width: 80vw;
-      height: 65vh;
   }
   .formulario-cadastro input{
     width: 95%;
