@@ -1,0 +1,11 @@
+{% extends 'task/recuperacaoSenha/base_recuperacaoSenha.html' %}
+
+{% block content %}
+<form class="form_recoverPass" action="{% url 'task:validarCodigo' %}" method="post">{% csrf_token %}
+  <p>Informe seu Email ou Username para recuperarmos sua senha</p>
+  <div class="inputs_form">
+    <input type="text" name="email_username" placeholder="Email ou Username">
+    <input type="submit" value="Enviar!" class="btn">
+  </div>
+</form>
+{% endblock %}

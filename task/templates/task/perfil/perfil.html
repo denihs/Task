@@ -1,0 +1,38 @@
+{% extends 'task/tarefas/base.html' %}
+
+{% block perfil %}
+<h1 class="titulo_sessao">Perfil</h1>
+  <div class="corpo_perfil">
+
+    <form class="form_change_avatar" action="{% url 'task:mudarImagemPerfil' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+      <label for="id_image">
+          <img src="{%if avatar.image%} {{avatar.image.url}} {%else%}/static/img/no_profile.png{% endif %}"
+          alt="Imagem de perfil" id="img_perfil" title="Mudar imagem perfil">
+      </label>
+      <input id="id_image" class="hidden" type="file" name="image_avatar">
+  </form>
+
+    <ul>
+      <li> <span class="span_title">Username</span> <span class="span_dados">{{ user.username }} </span></li>
+      <li>
+        <span class="span_title">Nome</span>
+          <span class="span_dados">
+            {% if user.first_name.strip or user.last_name.strip %} {{ user.first_name }} {{ user.last_name }} {% else %} Informado apenas espaços :( {% endif %}
+          </span>
+      </li>
+    </ul>
+  </div>
+<h1 class="titulo_sessao">Segurança</h1>
+  <div class="corpo_perfil">
+    <ul>
+      <li> <span class="span_title">Email</span> <span class="span_dados">{{ user.email }} </span></li>
+
+      <li>
+        <span class="span_title">Senha</span>
+            <a href="{% url 'task:trocarSenha' %}" class="link_trocar_senha">
+              <span class="span_dados">Trocar a senha</span>
+            </a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

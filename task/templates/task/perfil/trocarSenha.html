@@ -1,0 +1,22 @@
+{% extends 'task/tarefas/base.html' %}
+
+{% block trocarSenhha %}
+<div class="trocar_senha">
+    <form class="from_trocar_senha" action="{% url 'task:validaNovaSenha' %}" method="post">{% csrf_token %}
+      <p> Informe a nova senha </p>
+      <div class="inputs_form">
+          <input type="password" name="senha_atual" placeholder="Senha atual">
+          <input type="password" name="password" placeholder="Nova senha">
+          <input type="password" name="passwordAgain" placeholder="Repita a senha">
+          <input type="submit" value="Confimar" class="btn">
+      </div>
+    </form>
+</div>
+{% endblock %}
+{% block error %}
+      {% if error != '' %}
+        <div class="error">
+          <h3>{{ error }}</h3>
+        </div>
+      {% endif %}
+{% endblock %}

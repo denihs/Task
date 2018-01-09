@@ -1,0 +1,85 @@
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+/* ================ SESSÃO DO ESTILO DOS ERROS  =============================*/
+.error{
+  background-color: rgba(240, 44, 44, 0.9);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  width: 45vw;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: -47vw;
+  transition: all 0.5s;
+  top: 40vh;
+  padding: 10px;
+}
+.show_error{
+  left: 27.5vw;
+}
+.remove_error{
+  opacity: 0;
+  left: 48vw;
+}
+/* ------------- CORPO DA PAGINA --------------- */
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("/static/img/bg.jpg");
+  background-size: 100%;
+  text-align: center;
+  transition: all .4s;
+}
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  margin: 5px;
+}
+
+.btn{
+  cursor: pointer;
+  margin: 5px;
+}
+.btn:hover{
+  color: white;
+  background-color: #424242;
+}
+.form_verificaSenha{
+  transition: all .4s;
+}
+/* Pequenas resoluções */
+@media all and (max-width: 983px){
+  section {
+    background-size: 280% ;
+    background-position: center;
+  }
+}
+@media all and (max-width: 443px){
+  .form_verificaSenha{
+    width: 277px;
+  }
+}
+@media all and (max-width: 350px){
+  section {
+    background-size: 600% ;
+  }
+}

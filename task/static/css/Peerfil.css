@@ -1,0 +1,98 @@
+.header-pagina{
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), white);
+}
+/* ------------------------CORPO PERFIL-------------------------- */
+.corpo_perfil{
+  margin: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+span, h1{
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+}
+.span_dados{
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.titulo_sessao{
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+.link_trocar_senha span:hover{
+  background-color: #E0E0E0;
+  color: black;
+}
+/*---------------------TROCAR SENHA---------------------*/
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px;
+
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+}
+.inputs_form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+form input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  margin: 5px;
+}
+
+.btn{
+  cursor: pointer;
+  margin: 5px;
+}
+.btn:hover{
+  color: white;
+  background-color: #424242;
+}
+
+@media all and (max-width:392px){
+  .corpo_perfil{
+    flex-direction: column;
+    align-items: center;
+  }
+  span{
+    width : 80vw;
+  }
+  ul{
+    padding: 0;
+  }
+}
+
+/*-----------------TROCAR IMAGEM PERFIL-----------------*/
+.form_change_avatar{
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+#img_perfil {
+  width: 200px;
+  height: 200px;
+  border: 5px dashed rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  transition: all .3s;
+  cursor: pointer;
+}
+#img_perfil:hover{
+    opacity: .5;
+}

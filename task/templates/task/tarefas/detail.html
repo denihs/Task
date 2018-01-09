@@ -1,4 +1,4 @@
-{% extends 'task/base.html' %}
+{% extends 'task/tarefas/base.html' %}
 
 {% block detail %}
    <header class="header-descricao"><h1>{{ tarefa.nome }}</h1></header>
@@ -43,10 +43,19 @@
         <a  href="{% url 'task:editarDados' tarefa.id%}">
             Editar
         </a>
-        <a href="{% url 'task:remover' id %}">
+        <a class = "removerClose">
             Remover
         </a>
       </div>
 </section>
 
+<div class="corpo_exclusao">
+    <div class="opcoes_exclusao">
+        <h1>Tem certeza que deseja excluir a tarefa <span class="span_exclusao"> {{tarefa}} </span></h1>
+        <div class="buttons_exclusao">
+            <a href="{% url 'task:exclusaoDefinitiva' id %}">Excluir</a>
+            <a class = "removerClose" >Cancelar</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -4,13 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Tarefas</title>
+    <title>Lembre Me</title>
 
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/Style.css' %}">
+    <!-- A pagina de perfil tem seu estilo propio -->
+    {% if request.path == '/perfil/' or request.path == '/trocarSenha/' or request.path == '/validaNovaSenha/trocarSenha/' %}
+        <link rel="stylesheet" href="{% static 'css/Peerfil.css' %}">
+    {% endif %}
     <link rel="stylesheet" href="{% static 'css/Menus.css' %}">
     <link rel="stylesheet" href="{% static 'css/celular.css' %}" media="(max-width: 480px)" />
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/Script.js' %}"></script>
+
 
     <link href="https://fonts.googleapis.com/css?family=Cabin|Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
@@ -19,20 +24,26 @@
   <body>
     <!-- *****************   MENUS ********************* -->
     <header class="header-pagina">
-         <h1> <a href="{% url 'task:index' %}"> Minhas Tarefas </a></h1>
+         <h1> <a href="{% url 'task:index' %}"> Lembre Me </a></h1>
          <a class="user">
-              <span class="name_user">{% if request.first_name %}{{ request.first_name }} {% else %} {{request.user}} {% endif %}</span>
+              <span class="name_user">{% if request.user.first_name %}{{ request.user.first_name }} {% else %} {{request.user}} {% endif %}</span>
               <i class="fa fa-user" aria-hidden="true"></i>
          </a>
     </header>
 
     <div class="menu-deslizante">
         <ul class="menu-dropdown-deslizante">
-          <li><span>
-                {% if request.first_name %}{{ request.first_name }} {% else %} {{request.user}} {% endif %}
-          </span></li>
+          <li>
+            <img src="{%if request.user.perfil_set.all%}
+                          {{request.user.perfil_set.get.image.url}}
+                      {%else%}
+                          /static/img/no_profile_white.png
+                      {% endif %}"
+            alt="Imagem de perfil" >
+          </li>
           <li><span>=-=-=-=-=-=-=-=-=-=-=-= </span></li>
-          <li class="item-link"> <a class="item-menu" href="#"> Perfil </a></li>
+          <li class="item-link"> <a class="item-menu" href="{% url 'task:tarefas' %}">Minhas tarefas</a></li>
+          <li class="item-link"> <a class="item-menu" href="{% url 'task:perfil' %}">Perfil</a></li>
           <li class="item-link"><a class="item-menu" href="{% url 'task:deslogar' %}"> Sair </a> </li>
         </ul>
     </div>
@@ -42,7 +53,9 @@
         {% block formulario %} {% endblock %}
         {% block tarefas-list %} {% endblock %}
         {% block detail %}{% endblock %}
-        {% block exclusao %}{% endblock %}
+        {% block perfil %}{% endblock %}
+        {% block pessoal %}{% endblock %}
+        {% block trocarSenhha %}{% endblock %}
       </div>
   </body>
 </html>

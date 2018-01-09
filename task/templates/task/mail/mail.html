@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <style media="screen">
+        .corpo{
+          padding: 20px;
+          border: 1px solid black;
+          width: 50vw;
+          border-radius: 5px;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .codigo{
+          padding: 10px;
+          color: white;
+          background-color: rgba(0, 0, 0, 0.8);
+          border-radius: 5px;
+          font-size: 21px;
+        }
+    </style>
+
+</head>
+  <body>
+      <div class="corpo">
+        <p>Olá {{user}}!</p>
+        <p>
+          Estamos enviando um codigo de recuperação de senha,
+          use o codigo abaixo para poder recupera-la. Caso você
+          não tenha solicitado uma troca de senha, apenas ignore esse
+          e-mail.
+        </p>
+        <p class="codigo" > <strong> {{codigo}} </strong></p>
+        <p>Este e-mail é automatico, não o responda</p>
+      </div>
+  </body>
+</html>

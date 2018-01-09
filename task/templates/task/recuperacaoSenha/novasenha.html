@@ -1,0 +1,12 @@
+{% extends 'task/recuperacaoSenha/base_recuperacaoSenha.html' %}
+
+{% block content %}
+<form class="form_verificaSenha" action="{% url 'task:novasenha' %}" method="post">{% csrf_token %}
+  <p> Informe a nova senha </p>
+  <div class="inputs_form">
+      <input type="password" name="password" placeholder="Nova senha">
+      <input type="password" name="passwordAgain" placeholder="Repita a senha">
+      <input type="submit" value="Confimar" class="btn">
+  </div>
+</form>
+{% endblock %}

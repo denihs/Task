@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lembre Me</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="{% static 'css/recuperarSenha.css' %}">
+    <script src="{% static 'js/recuperarSenha.js' %}"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+  <body>
+      <section>
+        {% block content %}{% endblock %}
+      </section>
+
+        {% if erro != '' %}
+          <div class="error">
+            <h3>{{ erro }}</h3>
+          </div>
+        {% endif %}
+  </body>
+</html>
