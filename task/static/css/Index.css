@@ -49,6 +49,7 @@ header{
 
 .formulario-login{
   margin: 20px;
+  z-index: 10px;
 }
 .formulario-login h3{
   color: white;
